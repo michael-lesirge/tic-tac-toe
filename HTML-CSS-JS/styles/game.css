@@ -68,3 +68,21 @@
 	display: var(--cords-visibility);
 }
 
+
+.gameover-popup {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -500%);
+
+	padding: 1rem 3rem;
+
+	background-color: rgb(159, 159, 243);
+	border: 1px solid gray;
+	border-radius: 1rem;
+
+    box-shadow: 0 0 5px 2px gray;
+
+
+	z-index: 2;
+}

@@ -42,7 +42,7 @@ function displayCaption() {
 	} else {
 		winConstionExplanation.innerText =
 			"Get " +
-			(winConstionInput.value == ""
+			(winConstionInput.value === ""
 				? "all the way across"
 				: `${winConstionInput.value} in a row`) +
 			" to win.";
