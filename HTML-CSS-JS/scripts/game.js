@@ -54,21 +54,21 @@ class Cell {
 			}
 		});
 		this.name = name;
-		
+
 		this.reset();
 	}
-	
+
 	set(text) {
 		this.val = this.el.innerText = text;
 	}
-	
+
 	reset() {
 		this.disabled = false;
 		this.set("");
 		this.el.classList.remove("disabled", "highlighted");
 		this.el.setAttribute("tabIndex", 0);
 	}
-	
+
 	disable() {
 		this.disabled = true;
 		this.el.onclick = () => {};
@@ -390,7 +390,7 @@ function makeBoard() {
 		newURL.search = newParms;
 		history.pushState({}, null, newURL);
 	}
-	
+
 	return [new Board(width, height, ...(winRowLength ? [winRowLength, winRowLength, winRowLength] : [width, height, width === height ? width : undefined])), boardTitle];
 }
 
@@ -409,9 +409,11 @@ function fixOverflow() {
 	if (board.isOverflowing()) {
 		boardContainer.classList.remove("centered-container");
 		bodyStyle.overflowX = "scroll";
+		// boardContainer.style.position = "static";
 	} else {
 		boardContainer.classList.add("centered-container");
 		bodyStyle.overflowX = "hidden";
+		// boardContainer.style.position = "relative";
 	}
 }
 
